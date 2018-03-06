@@ -1,0 +1,6 @@
+
+<ul>
+#loop(items, "item") {
+#extend("item")
+}
+</ul>

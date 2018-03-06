@@ -2,6 +2,9 @@ import Vapor
 
 extension Droplet {
     func setupRoutes() throws {
+        get() { req in
+            Response(redirect: "/shopping_lists")
+        }
         get("hello") { req in
             var json = JSON()
             try json.set("hello", "world")
@@ -20,6 +23,7 @@ extension Droplet {
 
         get("description") { req in return req.description }
         
-        try resource("posts", PostController.self)
+        resource("items", ItemController())
+        resource("shopping_lists", ShoppingListController())
     }
 }

@@ -13,6 +13,13 @@ import HTTP
 @testable import App
 
 class ShoppingListControllerTests: TestCase {
+    static let allTests = [
+        ("testShoppingListIndex", testShoppingListIndex),
+        ("testShoppingListCreate", testShoppingListCreate),
+        ("testShoppingListDelete", testShoppingListDelete),
+        ("testShoppingListUpdate", testShoppingListUpdate),
+    ]
+    
     let drop = try! Droplet.testable()
     override func tearDown() {
         super.tearDown()
